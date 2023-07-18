@@ -41,4 +41,14 @@ class User extends Authenticatable
     // protected $casts = [
     //     'password' => 'hashed',
     // ];
+
+    public function driver()
+    {
+        return $this->hasOne(Driver::class);
+    }
+
+    public function trip()
+    {
+        return $this->hasMany(Trip::class);
+    }
 }
