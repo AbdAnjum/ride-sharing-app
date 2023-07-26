@@ -29,9 +29,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'login_code'
         // 'password',
-        'remember_token',
+        // 'remember_token',
     ];
+
+    public function routeNotificationForTwilio()
+    {
+        return $this->phone;
+    }
 
     /**
      * The attributes that should be cast.
